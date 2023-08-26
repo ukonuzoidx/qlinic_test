@@ -6,7 +6,11 @@ const app = express();
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
-app.post("/flutterwave-webhook", (req, res) => {
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+app.post("/flutterwave-webhook", (req, res, next) => {
   const eventData = req.body;
 
   // Assuming you're interested in the 'charge.completed' event
