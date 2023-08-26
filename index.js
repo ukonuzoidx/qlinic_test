@@ -19,7 +19,7 @@ app.post("/flutterwave-webhook", (req, res) => {
   }
 
   // Respond to Flutterwave to acknowledge receipt
-  res.sendStatus(200);
+  res.status(200).json({ message: "Event received" });
 });
 
 const PORT = 3000;
